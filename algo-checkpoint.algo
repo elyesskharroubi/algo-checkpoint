@@ -1,0 +1,21 @@
+ALGORITHM checkpoint
+VAR
+// l stands for length
+// w stands for words
+// v stands for vowel letters
+    text : STRING := "Hello from the other side."
+    l : INTEGER := text.length
+    w : INTEGER := 0
+    v : INTEGER := 0
+BEGIN
+    FOR i FROM 0 TO text.length  DO
+        SWITCH (text[i]) DO
+        case " " : w := w+1
+        case "a", "e", "i", "o", "u", "y" : v := v+1
+        default : set_instructions
+        END_SWITCH
+    END_FOR
+    Write(w+1)
+    Write(v)
+    Write(l)
+END
